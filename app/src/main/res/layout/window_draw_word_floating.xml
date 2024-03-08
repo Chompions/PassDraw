@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sawelo.passdraw.ui.custom_view.DialogWindowScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:clipToPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/windowDraw_drawingWordEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginVertical="16dp"
+            app:layout_constraintHeight_min="50dp"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:hint="@string/your_character_here"
+            android:textSize="18sp"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toStartOf="@id/windowDraw_reset_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="" />
+
+        <HorizontalScrollView
+            android:id="@+id/windowDraw_recommendationScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="6dp"
+            android:paddingHorizontal="8dp"
+            android:elevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/windowDraw_drawingWordEt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/windowDraw_recommendationLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/windowDraw_line"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?colorControlHighlight"
+            android:alpha=".2"
+            app:layout_constraintTop_toTopOf="@id/windowDraw_recommendationScrollView"
+            app:layout_constraintBottom_toBottomOf="@id/windowDraw_recommendationScrollView">
+        </View>
+
+        <ImageButton
+            android:id="@+id/windowDraw_reset_btn"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX=".8"
+            android:scaleY=".8"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/reset"
+            android:src="@drawable/baseline_backspace_24"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/windowDraw_drawingWordEt"
+            app:layout_constraintBottom_toBottomOf="@id/windowDraw_drawingWordEt"/>
+
+        <ImageButton
+            android:id="@+id/windowDraw_fadeWindow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_margin="16dp"
+            android:src="@drawable/baseline_visibility_off_24"
+            android:elevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/windowDraw_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/fade_visibility" />
+
+        <com.sawelo.passdraw.ui.custom_view.DrawingView
+            android:id="@+id/windowDraw_drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintTop_toTopOf="@id/windowDraw_line" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/windowDraw_cancel_btn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/windowDraw_ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.sawelo.passdraw.ui.custom_view.DialogWindowScrollView>

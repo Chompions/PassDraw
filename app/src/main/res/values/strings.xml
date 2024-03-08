@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PassDraw</string>
+    <string name="your_character_here">Your character here</string>
+    <string name="reset">Reset</string>
+    <string name="fade_visibility">Fade visibility</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+</resources>
